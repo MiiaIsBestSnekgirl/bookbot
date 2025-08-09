@@ -7,4 +7,14 @@ def main(file_path):
     full_text = get_book_text(file_path)
     print(full_text)
 
-main("books/frankenstein.txt")
+
+def word_counter(file_path):
+    full_text = get_book_text(file_path)
+    word_list = full_text.split()
+    
+    print(f"{len(word_list)} words found in the document")
+
+    
+
+
+word_counter("books/frankenstein.txt")
