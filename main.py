@@ -1,8 +1,12 @@
+import sys
+
+
 
 from stats import word_counter
 from stats import charecter_counter
 from stats import get_book_text
 from stats import dic_sort
+
 
 
 def main(file_path):
@@ -22,14 +26,19 @@ def main(file_path):
     for i in new_list:
         print(f"{i["char"]}: {i["num"]}")
     
-    
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+else: 
+    main(sys.argv[1])
         
     
 
 
 
-if __name__ == "__main__":
-    main("books/frankenstein.txt")
+#if __name__ == "__main__":
+ #   main()
 
 
 
