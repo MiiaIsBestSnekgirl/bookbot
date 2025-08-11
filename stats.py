@@ -1,9 +1,14 @@
 
 
 def word_counter(file_path):
+    
     full_text = get_book_text(file_path)
     word_list = full_text.split()
-    print(f"{len(word_list)} words found in the document")
+    return len(word_list)
+    
+
+
+
 
 
 def get_book_text(file_path):
@@ -16,18 +21,52 @@ def charecter_counter(file_path):
     charecter_instances= {
 
     }
-    for i in full_text:
-        for L in i:
-            L = L.lower()
-            if L not in charecter_instances:
-                charecter_instances[L] = 1
+    for i in full_text.lower():
+            if i not in charecter_instances:
+                charecter_instances[i] = 1
             else:
-                charecter_instances[L] += 1
+                charecter_instances[i] += 1
     return charecter_instances
+
+
+def dic_sort(file_path):
+    unsorted=charecter_counter(file_path)
+    sorted_list= [
+
+    ]
+    for char in unsorted:
+        amount= unsorted[char]
+        new_dic= {
+            "char": char, "num": amount
+        }
+        sorted_list.append(new_dic)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+    
+       
+def sort_on(items):
+    return items["num"]
+
+
+
+
+
+
+
+
+
+
+        
+
+    
+ 
+
+
      
     
             
-charecter_counter("books/frankenstein.txt")
+
+
 
         
 
